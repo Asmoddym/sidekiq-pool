@@ -30,6 +30,7 @@ module Sidekiq
       end
 
       def parse_config_file(filename)
+        puts "OH PEUCHERE"
         config = YAML.load(ERB.new(File.read(filename)).result)
         unless config.key?(:workers)
           raise ArgumentError, 'Invalid configuration file - "workers" key must be present'
